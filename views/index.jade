@@ -2,7 +2,7 @@ extends layout
 
 block head
   link(rel='stylesheet', href='/stylesheets/index.css')
-  meta(http-equiv='refresh', content='5')
+  //meta(http-equiv='refresh', content='5')
     
 block content
 
@@ -26,9 +26,16 @@ block content
         h1.copy-heading What job is right for you?
         p.copy-subtitle Chart your own journey...
 
-      button.btn.btn-block.btn-primary.start-button
+      form
+        input(type='text' placeholder='Enter Your Name')#name-field
+
+      button.btn.btn-block.btn-primary.start-button#onward-button
         | Onward!!! -->
 
+      div.notification#name-presence-notification
+        | Please enter a name to start explorer!
+
+      img(src='/images/little-guy.svg')#landing-image
 
   include partials/bottom-nav-bar
 

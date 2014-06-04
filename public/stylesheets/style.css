@@ -2,11 +2,24 @@ body {
   font-family: 'Gloria Hallelujah', cursive;
 }
 
+.btn {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
 .jumbotron {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 3px; 
   margin: 15px 0px;
+}
+
+.notification {
+  display: none; /* Start notifications as hidden */
+  text-align: center;
+  color: #D9534F;
+  padding: 15px;
+  border: 1px solid #D9534F;
+  margin: 15px;
 }
 
 .copy-heading {
@@ -19,7 +32,6 @@ body {
 }
 
 .start-button {
-  margin: 25px 0px;
+  margin: 15px 0x 15px;
   font-size: 30pt;
-  font-family: 'Gloria Hallelujah', cursive;
 }
