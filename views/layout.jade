@@ -2,6 +2,33 @@ doctype html
 html
   head
     title= title
+
+    // Sets initial viewport load and disables zooming  
+    meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui')
+
+    // Makes your prototype chrome-less once bookmarked to your phone's home screen 
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+
+    // Include the compiled Ratchet CSS 
+    link(rel='stylesheet', href='/ratchet/css/ratchet.css')
+
+    // Google Fonts
+    link(href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css') 
+
+    // Customized stylesheet
     link(rel='stylesheet', href='/stylesheets/style.css')
+
+    // Include the compiled Ratchet JS 
+    script(src='/ratchet/js/ratchet.js')
+
+    // Page specific headers
+    block head
+
   body
+
+    // Main body content
     block content
+
+    // Page specific footers
+    block foot 

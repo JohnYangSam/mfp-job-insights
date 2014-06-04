@@ -1,5 +1,36 @@
 extends layout
 
+block head
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  meta(http-equiv='refresh', content='5')
+    
 block content
-  h1= title
-  p Welcome to #{title}
+
+  // Top navigation
+  header.bar.bar-nav
+    //
+      button.btn.btn-link.btn-nav.pull-left
+        span.icon.icon-left-nav
+        | Back
+
+    h1.title MFP Job Insights
+
+    //
+      button.btn.btn-link.btn-nav.pull-right Next
+        span.icon.icon-right-nav
+
+  // Center Content
+  div.content
+    div.content-padded
+      div.jumbotron
+        h1.copy-heading What job is right for you?
+        p.copy-subtitle Chart your own journey...
+
+      button.btn.btn-block.btn-primary.start-button
+        | Onward!!! -->
+
+
+  include partials/bottom-nav-bar
+
+block foot
+  script(type='text/javascript', src='/javascripts/index.js')
