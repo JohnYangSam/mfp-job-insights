@@ -34,7 +34,7 @@ $('#onward-button').click(function(e) {
   } else {
     hideError();
     var name = $('name-field').val();
-    window.location.href = '/question/1/?name=' + encodeURIComponent(name);
+    window.location.href = '/questions/1/?name=' + encodeURIComponent(name);
   }
 
 });
