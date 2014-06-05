@@ -312,21 +312,33 @@ block content
         h1.name #{' ' + name}'s Job Search
 
       div#story-container
-      each snippet, index in story
-        p(id='snippet#{index}').snippet
 
-        script(class='js-custom').
-          function snippet#{index}() { 
-            $('#snippet#{index}').typed({
-              strings: ["#{snippet}"],
-              typeSpeed: .01,
-              callback: snippet#{index + 1}
+      script(class='js-custom').
+        $(function() {
+
+          $('#story-container').typed({
+            strings: ["#{story}"],
+            typeSpeed: .01,
+            callback: finalWord
             });
-          }
+        })();
+
+      //
+        each snippet, index in story
+          p(id='snippet#{index}').snippet
+
+          script(class='js-custom').
+            function snippet#{index}() { 
+              $('#snippet#{index}').typed({
+                strings: ["#{snippet}"],
+                typeSpeed: .01,
+                callback: snippet#{index + 1}
+              });
+            }
 
       // Last script for the end
       script(class='js-custom').
-        function snippet#{story.length}() {
+        function finalWord() {
           $('#final-word').typed({
             strings: ["Good luck this summer, #{name}!"],
             typeSpeed: .01,
@@ -334,11 +346,6 @@ block content
         }
 
       p.final-word#final-word
-
-      script(class='js-custom').
-        (function() {
-          snippet0();
-        })()
 
       div.spacer#end
 
