@@ -106,7 +106,7 @@ exports.generateStory = function(answers) {
   var question;
   var answer;
   var snippet;
-  var story = '';
+  var story = [];
 
   for(question = 0; question < questions.length; ++question) {
     answer = answers[question];
@@ -115,10 +115,20 @@ exports.generateStory = function(answers) {
     // Answer depends on the last question as well
     if(typeof snippet !== 'string') {
       var lastAnswer = answers[question - 1];
-      console.log(lastAnswer);
-      snippet[lastAnswer];
+
+      // This protects against the case where a user hasn't answered
+      // a previous question that is required.
+      if (!lastAnswer) continue;
+      snippet = snippet[lastAnswer];
     }
-    story += snippet;
+    story.push(snippet);
   }
+
+  // Protects against edge cases
+  if (story.length === 0) {
+    story.push('Sorry, you must have skipped some questions while on your job search');
+    story.push('Why don\'t you try pressing home to restart?');
+  }
+
   return story;
 };

@@ -9,8 +9,6 @@ var generateStory = questions.generateStory;
 exports.conclusion = function(req, res) {
   var name    = req.session['name'];
   var answers = req.session['answers'];
-  console.log(answers);
-  console.log(questionsList.length);
   var story   = generateStory(answers);
 
   // id will be used ot calculate the 'last' (previous) page index
