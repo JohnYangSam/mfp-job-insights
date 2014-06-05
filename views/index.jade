@@ -26,12 +26,12 @@ block content
         h1.copy-heading What job is right for you?
         p.copy-subtitle Chart your own journey...
 
-      form
-        input(type='text' placeholder='Enter Your Name')#name-field
+      form(method='get', action='/questions/0')
+        input(type='text' name='name' placeholder='Enter Your Name')#name-field
 
-      // We have Javascript attached to this as well, but Push.js sometimes messes up the js load
-      button.btn.btn-block.btn-primary.start-button#onward-button
-        | Onward!!! -->
+        // We have Javascript attached to this as well, but Push.js sometimes messes up the js load
+        button(type='submit').btn.btn-block.btn-primary.start-button#onward-button
+          | Onward!!! -->
 
       div.notification#name-presence-notification
         | Please enter a name to start explorer!
@@ -75,7 +75,7 @@ block content
         } else {
           //hideError();
           var name = $('#name-field').val();
-          window.location = '/questions/0/?name=' + encodeURIComponent(name);
+          window.location.href = '/questions/0/?name=' + encodeURIComponent(name);
         }
       });
 
