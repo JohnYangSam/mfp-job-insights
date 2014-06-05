@@ -13,7 +13,7 @@ block content
         span.icon.icon-left-nav
         | Back
 
-    h1.title MFP Job Insights
+    h1.title #{title}
 
     //
       button.btn.btn-link.btn-nav.pull-right Next
@@ -36,7 +36,8 @@ block content
       div.notification#name-presence-notification
         | Please enter a name to start explorer!
 
-      img(src='/images/little-guy.svg')#landing-image
+      // Inline style corrects for push.js quirks
+      img(src='/images/little-guy.svg', style='width:150px;margin-right:auto;marign-left:auto')#landing-image
 
     script(class='js-custom').
       function validateNamePresence() {

@@ -50,7 +50,8 @@ exports.question = function(req, res, next) {
 
     // Render the specific question
     } else {
-      res.render('question', {'question': questionsList[id]}); 
+      var questionNumber = parseInt(id) + 1;
+      res.render('question', { 'title': 'Question ' + questionNumber, 'question': questionsList[id]}); 
     }
   } else {
     // Move onto the next match

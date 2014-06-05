@@ -34,6 +34,8 @@ if ('development' == app.get('env')) {
 
 // Routes
 app.get('/', routes.index);
+app.get('/profiles', routes.profiles);
+app.get('/info', routes.info);
 app.get('/questions', question.list);
 app.get('/questions/:id?', question.question);
 app.get('/conclusion', conclusion.conclusion);

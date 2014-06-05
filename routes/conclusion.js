@@ -17,6 +17,7 @@ exports.conclusion = function(req, res) {
 
   res.render('conclusion',
     {
+      'title': 'Conclusion',
       'id': id,
       'name': name,
       'story': story

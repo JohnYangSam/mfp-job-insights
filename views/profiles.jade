@@ -1,0 +1,102 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/profiles.css')
+  //meta(http-equiv='refresh', content='5')
+    
+block content
+
+  // Top navigation
+  header.bar.bar-nav
+    //
+      button.btn.btn-link.btn-nav.pull-left
+        span.icon.icon-left-nav
+        | Back
+
+    h1.title #{title}
+
+    //
+      button.btn.btn-link.btn-nav.pull-right Next
+        span.icon.icon-right-nav
+
+  // Center Content
+  div.content
+    ul.table-view
+      li.table-view-cell
+        img(src='/images/fellows/yael.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Yael
+          p The international policy strategist.
+
+      li.table-view-cell
+        img(src='/images/fellows/thomissa.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Thomissa
+          p The bear fighting Alaskan.
+
+      li.table-view-cell
+        img(src='/images/fellows/stutz.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Andrew
+          p The eating healthy football star.
+
+      li.table-view-cell
+        img(src='/images/fellows/saam.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Saam
+          p The hedge fund manager with foot gear.
+
+      li.table-view-cell
+        img(src='/images/fellows/roberto.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Roberto
+          p The singing virtoso from off campus.
+
+      li.table-view-cell
+        img(src='/images/fellows/michelle.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Michelle
+          p The electric iPhone gokart hardware hacker.
+
+      li.table-view-cell
+        img(src='/images/fellows/melanie.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Melanie
+          p The super learner so kind she could kill you!
+
+
+      li.table-view-cell
+        img(src='/images/fellows/lauryn.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Lauryn
+          p The Connecticut cruiser.
+
+
+      li.table-view-cell
+        img(src='/images/fellows/josephine.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          Josephine
+          p The perfect problem solver.
+
+
+      li.table-view-cell
+        img(src='/images/fellows/jordan.jpg').media-object.pull-left.fellow-photo
+        div.media-body
+          | Jordan
+          p The role playing orator.
+
+    li.table-view-cell
+      img(src='/images/fellows/deanna.jpg').media-object.pull-left.fellow-photo
+      div.media-body
+        | Deanna
+        p The organization mastermind.
+
+    li.table-view-cell
+      img(src='/images/fellows/john.jpg').media-object.pull-left.fellow-photo
+      div.media-body
+        | John
+        p The digital architect.
+
+    div.spacer
+
+block foot

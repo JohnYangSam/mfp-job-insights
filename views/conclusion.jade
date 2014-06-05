@@ -14,7 +14,7 @@ block content
         span.icon.icon-left-nav
         | Back
 
-    h1.title MFP Job Insights
+    h1.title #{title}
     //
       button.btn.btn-link.btn-nav.pull-right Next
         span.icon.icon-right-nav
@@ -23,14 +23,12 @@ block content
   div.content
     div.content-padded
       div.jumbotron
-        h1.name Embark,
-          span #{' ' + name}
-          | ...
+        h1.name #{' ' + name}'s Job Search
 
       each snippet in story
-        p
+        p.snippet
           | #{snippet}
 
-      p.final-word Good luck this summer!
+      p.final-word Good luck this summer, #{name}!
 
       div.spacer

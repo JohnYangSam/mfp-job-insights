@@ -14,7 +14,7 @@ li a:hover {
   background-color: #70b6ef;
 }
 
-p {
+p.snippet {
   font-family: "Helvetica Neue",sans-serif;
   font-size: 15pt;
 }
@@ -62,4 +62,9 @@ p.final-word {
 .start-button {
   margin: 15px 0x 15px;
   font-size: 24pt;
+}
+
+.fellow-photo {
+  width: 75px;
+  height: 75px;
 }

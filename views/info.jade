@@ -1,0 +1,45 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/info.css')
+  //meta(http-equiv='refresh', content='5')
+    
+block content
+
+  // Top navigation
+  header.bar.bar-nav
+    //
+      button.btn.btn-link.btn-nav.pull-left
+        span.icon.icon-left-nav
+        | Back
+
+    h1.title #{title}
+
+    //
+      button.btn.btn-link.btn-nav.pull-right Next
+        span.icon.icon-right-nav
+
+  // Center Content
+  div.content
+    div.content-padded
+      div.jumbotron
+        h3.copy-heading MFP Job Insights
+        p.copy-subtitle Chart your own journey...
+
+      // Inline style corrects for push.js quirks
+      img(src='/images/little-guy.svg' style='width:150px;margin-left:auto;margin-right:auto')#small-landing-image
+
+      p Created with love by:
+      p Deanna Badizadegan and John Yang-Sammataro
+      p (a "VIEking" and a "Dent Maker")
+      p For the 
+        a(href='http://mfp.stanford.edu') Mayfield Fellows Program
+        | 
+        | Spring 2014
+        | 
+        a(href='http://www.stanford.edu/class/e140/e140a/') E140A class
+        | .
+
+    div.spacer
+
+block foot
