@@ -317,19 +317,27 @@ block content
 
         script(class='js-custom').
           function snippet#{index}() { 
+            $(".content").animate({ scrollTop: $(document).height() }, "slow");
             $('#snippet#{index}').typed({
               strings: ["#{snippet}"],
               typeSpeed: .01,
-              callback: snippet#{index + 1}
+              callback: function () {
+                $(".content").animate({ scrollTop: $(document).height() }, "slow");
+                snippet#{index + 1}();
+              }
             });
           }
 
       // Last script for the end
       script(class='js-custom').
         function snippet#{story.length}() {
+          $(".content").animate({ scrollTop: $(document).height() }, "slow");
           $('#final-word').typed({
             strings: ["Good luck this summer, #{name}!"],
             typeSpeed: .01,
+            callback: function() {
+              $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+            }
           });
         }
 
@@ -340,7 +348,7 @@ block content
           snippet0();
         })()
 
-      div.spacer
+      div.spacer#end
 
 block foot
 
