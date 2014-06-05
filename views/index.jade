@@ -48,6 +48,7 @@ block content
         return val !== '';
       }
 
+      /*
       function raiseError() {
         $('#name-presence-notification').css({display:'block'});
         $('#landing-image').css({display:'none'});
@@ -79,6 +80,7 @@ block content
           window.location.href = '/questions/0/?name=' + encodeURIComponent(name);
         }
       });
+      */
 
       $('#name-field').on('keyup', function() {
         if (validateNamePresence()) {
