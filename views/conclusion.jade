@@ -320,9 +320,7 @@ block content
             $('#snippet#{index}').typed({
               strings: ["#{snippet}"],
               typeSpeed: .01,
-              callback: function() {
-                eval(snippet#{index + 1}());
-              }
+              callback: snippet#{index + 1}
             });
           }
 
