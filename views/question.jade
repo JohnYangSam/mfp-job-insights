@@ -1,0 +1,32 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/question.css')
+
+block content
+  // Top navigation
+  header.bar.bar-nav
+
+    - var backId = question.id - 1;
+    - var back = '/questions/' + backId;
+    a(href=back)
+      button.btn.btn-link.btn-nav.pull-left
+        span.icon.icon-left-nav
+        | Back
+
+    h1.title MFP Job Insights
+    //
+      button.btn.btn-link.btn-nav.pull-right Next
+        span.icon.icon-right-nav
+
+  div.content
+    h1
+      = question.question
+
+    ul.table-view
+      each option, index in question.options
+        li.table-view-cell   
+          a(href='/questions/' + (question.id + 1) + '?q=' + question.id + '&a=' + index).navigate-right
+            = index + '. ' + option.option
+
+block foot

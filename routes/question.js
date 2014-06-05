@@ -1,3 +1,7 @@
+
+var questions = require('../models/questions');
+var questionsList = questions.questions;
+
 /*
  * GET /questions
  *
@@ -32,8 +36,20 @@ exports.question = function(req, res, next) {
     req.session.answers[q] = a; 
   }
 
+  // If an ID is sent with the question
   if (id) {
-    res.render(); 
+    // Returning ot home page
+    if (id < 0) {
+      res.redirect('/');
+
+    // Directing to the final page
+    } else if (id >= questionsList.length) {
+      res.redirect('/conclusion');
+
+    // Render the specific question
+    } else {
+      res.render('question', {'question': questionsList[id]}); 
+    }
   } else {
     // Move onto the next match
     next();
@@ -42,6 +58,7 @@ exports.question = function(req, res, next) {
 
 /*
   Question
+
   {
     'id': 1,
     'question': "What is this question?",

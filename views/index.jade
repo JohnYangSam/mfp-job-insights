@@ -29,6 +29,7 @@ block content
       form
         input(type='text' placeholder='Enter Your Name')#name-field
 
+      // We have Javascript attached to this as well, but Push.js sometimes messes up the js load
       button.btn.btn-block.btn-primary.start-button#onward-button
         | Onward!!! -->
 
@@ -36,6 +37,45 @@ block content
         | Please enter a name to start explorer!
 
       img(src='/images/little-guy.svg')#landing-image
-      
+
+    script(class='js-custom').
+      function validateNamePresence() {
+        var $nameField = $('#name-field');
+        var val = $nameField.val();
+        // Ensure that there is a valid input
+        return val !== '';
+      }
+
+      function raiseError() {
+        $('#name-presence-notification').css({display:'block'});
+        $('#landing-image').css({display:'none'});
+        $('#name-field').css({'border-color':'#D9534F'});
+        complete.log("Incomplete name");
+      }
+
+      function hideError() {
+        $('#name-presence-notification').css({display:'none'});
+        $('#landing-image').css({display:'block'});
+        $('#name-field').css({'border-color':'#ccc'});
+        console.log("Complete name");
+      }
+
+      // validate name presence on the onward button click
+      // Display/hide an error message appropriately
+      $('#onward-button').click(function(e) {
+        // Prevent any standard linking
+        e.preventDefault();
+
+        // Stop page move and show error notification
+        if (!validateNamePresence()) {
+          raiseError();
+
+        // Hide errors and save name
+        } else {
+          hideError();
+          var name = $('#name-field').val();
+          window.location.href = '/questions/0/?name=' + encodeURIComponent(name);
+        }
+      });
+
 block foot
-  script(type='text/javascript', src='/javascripts/index.js')
