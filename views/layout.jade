@@ -43,8 +43,6 @@ html
       window.addEventListener('push', function() {
         var scriptsList = document.querySelectorAll('script.js-custom');
         for(var i = 0; i < scriptsList.length; ++i) {
-          console.log(scriptsList[i].innerHTML);
           eval(scriptsList[i].innerHTML);
         }
-        console.log('executed');
       });
