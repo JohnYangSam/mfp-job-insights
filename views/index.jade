@@ -30,8 +30,9 @@ block content
         input(type='text' name='name' placeholder='Enter Your Name')#name-field
 
         // We have Javascript attached to this as well, but Push.js sometimes messes up the js load
-        button(type='submit').btn.btn-block.btn-primary.start-button#onward-button
-          | Onward!!! -->
+
+        button(type='submit', disabled=true).btn.btn-block.btn-primary.start-button#onward-button
+          | Enter name above
 
       div.notification#name-presence-notification
         | Please enter a name to start explorer!
@@ -76,6 +77,17 @@ block content
           //hideError();
           var name = $('#name-field').val();
           window.location.href = '/questions/0/?name=' + encodeURIComponent(name);
+        }
+      });
+
+      $('#name-field').on('keyup', function() {
+        if (validateNamePresence()) {
+          $('#onward-button').text('Onward!!! -->');
+          $('#onward-button').attr('disabled', false);
+        } else {
+          $('#onward-button').text('Enter name above');
+          $('#onward-button').attr('disabled', true);
+
         }
       });
 
