@@ -317,7 +317,6 @@ block content
 
         script(class='js-custom').
           function snippet#{index}() { 
-            $('.content').animate({ scrollTop: $(document).height() }, "slow");
             $('#snippet#{index}').typed({
               strings: ["#{snippet}"],
               typeSpeed: .01,
@@ -330,7 +329,6 @@ block content
       // Last script for the end
       script(class='js-custom').
         function snippet#{story.length}() {
-          $('.content').animate({ scrollTop: $(document).height() }, "slow");
           $('#final-word').typed({
             strings: ["Good luck this summer, #{name}!"],
             typeSpeed: .01,
