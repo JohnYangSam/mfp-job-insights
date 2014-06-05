@@ -2,6 +2,8 @@
 var questions = require('../models/questions');
 var questionsList = questions.questions;
 
+var conclusion = require('./conclusion');
+
 /*
  * GET /questions
  *
@@ -20,9 +22,9 @@ exports.question = function(req, res, next) {
   var id = req.params.id;
 
   // Optional responses
-  var name = req.params.name;
-  var lastQuestion  = req.params.q;
-  var answer        = req.params.a;
+  var name = req.param('name');
+  var lastQuestion  = req.param('q');
+  var answer        = req.param('a');
 
   // Set the name
   if (name) req.session.name = name;
@@ -30,10 +32,10 @@ exports.question = function(req, res, next) {
   // Save last question
   if (lastQuestion && answer) {
     // Lazy creation of the session array
-    if (!req.session.answers) req.session.answers = {};
+    if (!req.session['answers']) req.session.answers = {};
 
     // Save question in the object/hash
-    req.session.answers[q] = a; 
+    req.session['answers'][lastQuestion] = answer; 
   }
 
   // If an ID is sent with the question
@@ -44,7 +46,7 @@ exports.question = function(req, res, next) {
 
     // Directing to the final page
     } else if (id >= questionsList.length) {
-      res.redirect('/conclusion');
+      conclusion.conclusion(req, res);
 
     // Render the specific question
     } else {
@@ -57,14 +59,14 @@ exports.question = function(req, res, next) {
 };
 
 /*
-  Question
+  Example object in the questions array:
 
   {
-    'id': 1,
+    'id': 0,
     'question': "What is this question?",
     'options': [
-      {'option text': 'Answer text'},
-      {'option text again': 'answer text again'}
+      {'option: 'The first option'},
+      {'option': 'The second option'}
     ]
   }
 

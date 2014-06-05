@@ -7,7 +7,7 @@ block content
   // Top navigation
   header.bar.bar-nav
 
-    - var backId = question.id - 1;
+    - var backId = id - 1;
     - var back = '/questions/' + backId;
     a(href=back)
       button.btn.btn-link.btn-nav.pull-left
@@ -18,3 +18,12 @@ block content
     //
       button.btn.btn-link.btn-nav.pull-right Next
         span.icon.icon-right-nav
+
+  // Center content
+  div.content
+    div.content-padded
+      div.jumbotron
+        h1 Congratulations #{name}!
+
+      p
+        | #{story}

@@ -24,9 +24,9 @@ block content
       = question.question
 
     ul.table-view
-      each option, index in question.options
+      each val, option in question.options
         li.table-view-cell   
-          a(href='/questions/' + (question.id + 1) + '?q=' + question.id + '&a=' + index).navigate-right
-            = index + '. ' + option.option
+          a(href='/questions/' + (question.id + 1) + '?q=' + question.id + '&a=' + encodeURIComponent(option)).navigate-right
+            = option
 
 block foot
