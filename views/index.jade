@@ -85,10 +85,10 @@ block content
       $('#name-field').on('keyup', function() {
         if (validateNamePresence()) {
           $('#onward-button').text('Onward!!! -->');
-          $('#onward-button').attr('disabled', false);
+          $('#onward-button').removeAttr('disabled', 'disabled');
         } else {
           $('#onward-button').text('Enter name above');
-          $('#onward-button').attr('disabled', true);
+          $('#onward-button').rAttr('disabled');
 
         }
       });

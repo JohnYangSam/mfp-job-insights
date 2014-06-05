@@ -25,6 +25,7 @@ block content
       div.jumbotron
         h1.name #{' ' + name}'s Job Search
 
+      div#story-container
       each snippet in story
         p.snippet
           | #{snippet}
@@ -32,3 +33,9 @@ block content
       p.final-word Good luck this summer, #{name}!
 
       div.spacer
+
+    script(class='js-custom').
+      $('#story-container').typed({
+        strings: story,
+        typeSpeed: 0
+        });
