@@ -314,14 +314,14 @@ block content
       div#story-container
 
       script(class='js-custom').
-        $(function() {
+        function story() {
 
           $('#story-container').typed({
             strings: ["#{story}"],
             typeSpeed: .01,
             callback: finalWord
             });
-        })();
+        };
 
       //
         each snippet, index in story
@@ -350,4 +350,7 @@ block content
       div.spacer#end
 
 block foot
+  script(class='js-custom').
+    story();
+
 
