@@ -20,7 +20,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
 
     // Include the compiled Ratchet JS 
-    script(src='/jquery/js/jquery-2.1.1.min.js')
+    script(src='/jquery/js/jquery-2.1.1.min.js', class="js-custom")
     script(src='/ratchet/js/ratchet.js')
     script(src='/ratchet/js/fingerblast.js')
 
@@ -37,16 +37,13 @@ html
     // Page specific footers
     block foot
 
-    // Enable FingerBlast for Desktop
-    script.
-      //(function () {var fb = new FingerBlast('body')})();
-
     // Handling custom JS code with Push.js from:
     // http://stackoverflow.com/questions/23207741/executing-several-js-files-with-ratchet-push-js-library/23316965#23316965
     script.
       window.addEventListener('push', function() {
         var scriptsList = document.querySelectorAll('script.js-custom');
         for(var i = 0; i < scriptsList.length; ++i) {
+          console.log(scriptsList[i].innerHTML);
           eval(scriptsList[i].innerHTML);
         }
         console.log('executed');

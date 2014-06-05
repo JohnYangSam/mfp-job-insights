@@ -26,6 +26,7 @@ app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'vendor')));
+app.disable('etag'); // disable 304s - if you have 304s, statics might not be reloaded
 
 // development only
 if ('development' == app.get('env')) {

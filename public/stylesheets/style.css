@@ -68,3 +68,8 @@ p.final-word {
   width: 75px;
   height: 75px;
 }
+
+/* Remove the Typed.js Cursor. */
+#typed-cursor{
+  display: none;
+}
