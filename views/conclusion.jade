@@ -312,18 +312,6 @@ block content
         h1.name #{' ' + name}'s Job Search
 
       div#story-container
-
-      script(class='js-custom').
-        function story() {
-
-          $('#story-container').typed({
-            strings: ["#{story}"],
-            typeSpeed: .01,
-            callback: finalWord
-            });
-        };
-
-      //
         each snippet, index in story
           p(id='snippet#{index}').snippet
 
@@ -336,21 +324,21 @@ block content
               });
             }
 
-      // Last script for the end
-      script(class='js-custom').
-        function finalWord() {
-          $('#final-word').typed({
-            strings: ["Good luck this summer, #{name}!"],
-            typeSpeed: .01,
-          });
-        }
+        // Last script for the end
+        script(class='js-custom').
+          function snippet#{story.length}() {
+            $('#final-word').typed({
+              strings: ["Good luck this summer, #{name}!"],
+              typeSpeed: .01,
+            });
+          }
 
       p.final-word#final-word
+
+      script(class='js-custom').
+        snippet0();
 
       div.spacer#end
 
 block foot
-  script(class='js-custom').
-    story();
-
 

@@ -9,17 +9,12 @@ var generateStory = questions.generateStory;
 exports.conclusion = function(req, res) {
   var name    = req.session['name'];
   var answers = req.session['answers'];
-  var snippets   = generateStory(answers);
+  var story   = generateStory(answers);
 
   // id will be used ot calculate the 'last' (previous) page index
   var id = req.params.id
   if (!id) id = questionsList.length;
 
-  var story = '';
-  for (var i = 0; i < snippets.length; ++i) {
-    story += snippets[i] + ' ';
-  }
-  
   res.render('conclusion',
     {
       'title': 'Conclusion',
