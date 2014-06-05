@@ -88,7 +88,7 @@ var questions = [
     'options': {
       'Tina': "Don't sweat it too much - under the guidance of Tina Seelig, you're bound to find a great summer position!",
       'Tom': "And remember, don't sweat it too much - Tom will happily let you work in his garage if nothing else works out :P",
-      'Moritz': "Don't sweat it too much - Moritz can always hire you at Glmpse if nothing else works out :P"
+      'Moritz': "Don't sweat it too much - Moritz can always hire you as his \"alpha tester in residence\" at Glmpse if nothing else works out :P"
     }
   }
 ];
