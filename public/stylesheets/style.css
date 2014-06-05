@@ -14,6 +14,20 @@ li a:hover {
   background-color: #70b6ef;
 }
 
+p {
+  font-size: 15pt;
+}
+
+p.final-word {
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+/* To fix the bottom bar covering content */
+.spacer {
+  height: 50px;
+}
+
 .btn {
   font-family: 'Gloria Hallelujah', cursive;
 }

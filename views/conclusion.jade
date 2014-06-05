@@ -23,10 +23,14 @@ block content
   div.content
     div.content-padded
       div.jumbotron
-        h1.name The job search of
-          span #{name}
+        h1.name Embark,
+          span #{' ' + name}
           | ...
 
       each snippet in story
         p
           | #{snippet}
+
+      p.final-word Good luck this summer!
+
+      div.spacer
